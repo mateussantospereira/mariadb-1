@@ -20,7 +20,7 @@ CREATE TABLE agencia (
     id_agencia INT NOT NULL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     endereco VARCHAR(100) NOT NULL,
-    data_cadastro DATE NOT NULL AUTO_INCREMENT,
+    data_cadastro DATE NOT NULL CURRENT_DATE,
     id_funcionario INT NOT NULL
         REFERENCES funcionario(id_funcionario),
     status VARCHAR(100)
@@ -38,7 +38,7 @@ CREATE TABLE cliente (
     cpf VARCHAR(20) NOT NULL,
     rg VARCHAR(12) NOT NULL,
     data_nascimento DATE NOT NULL,
-    data_cadastro DATE NOT NULL AUTO_INCREMENT,
+    data_cadastro DATE NOT NULL CURRENT_DATE,
     endereco VARCHAR(100) NOT NULL,
     telefone VARCHAR(15) NOT NULL,
     status VARCHAR(100)
@@ -56,7 +56,7 @@ CREATE TABLE dependente (
     sequencia INT NOT NULL,
     PRIMARY KEY (id_socio, sequencia),
     nome VARCHAR(100) NOT NULL,
-    data_cadastro DATE NOT NULL AUTO_INCREMENT
+    data_cadastro DATE NOT NULL CURRENT_DATE
 );
 
 CREATE TABLE conta (
